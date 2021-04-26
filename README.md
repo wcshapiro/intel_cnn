@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
 # Required Changes
 
-You will need to change the following sectino in the record funciton to get this to work on your device.
+You will need to change the following section in the record funciton to get this to work on your device.
 ```
 sd.default.device = ['MacBook Pro Microphone','MacBook Pro Speakers']
 ```
