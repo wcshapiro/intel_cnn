@@ -239,41 +239,7 @@ def main():
         cnn.fit(x = training_set,validation_data=test_set,epochs=35)
         cnn.save("cnn_model")
 
-
-    # test_image = image.load_img('spectrograms/single_prediction/chunk1_call_light_stitched.wav_img.png',target_size = (64,64))
-    # test_image = image.img_to_array(test_image)
-    # test_image = np.expand_dims(test_image,axis=0)
-
-    # result = cnn.predict(test_image/255.0)
-    #classifications = [_ for _ in os.listdir("spectrograms/test_set") if not _.startswith(".")]
     classifications = ['background_noise','call_light','in_room_bp','iv_alarm','scd_machine']    
-    # decision = []
-    # for x in result[0]:
-    #     decision.append(str(round(x*100,2)))
-    # max_index = decision.index(max(decision))
-    # for key,val in classifications.items():
-    #     if val == max_index:
-    #         sound_name = key
-    # print(sound_name)
-    # # if result[0][0] > .5:
-    # #     prediction = "dog"
-    # # else:
-    # #     prediction = "cat"
-    # # print(result)
-    # test_image = image.load_img('spectrograms/single_prediction/chunk26_iv_alarm_stitched.wav_img.png',target_size = (64,64))
-    # test_image = image.img_to_array(test_image)
-    # test_image = np.expand_dims(test_image,axis=0)
-
-    # result = cnn.predict(test_image/255.0)
-
-    # decision = []
-    # for x in result[0]:
-    #     decision.append(str(round(x*100,2)))
-    # max_index = decision.index(max(decision))
-    # for key,val in classifications.items():
-    #     if val == max_index:
-    #         sound_name = key
-    # print(sound_name)
     
     i=0
     while(1):
@@ -291,11 +257,9 @@ def main():
 
         result = cnn.predict_classes(test_image/255.0)
         result_prob = cnn.predict(test_image/255.0)
-        # print(list(result_prob))
-        # exit()
-        # if list(result_prob[0][list(result)[0]])
-
-        # print(classifications2[list(result)[0]],result_prob)
+        os.remove(f"spectrograms/live/{fileName}.wav")
+        os.remove(f'spectrograms/live/test_img{i}.png')
+        
         decision = []
         for x in result_prob[0]:
             decision.append(str(round(x*100,2)))
@@ -343,5 +307,5 @@ def main():
     # plt.show()
     
 if __name__ == '__main__':
-    threading.Thread(target=app.run).start()
+    #threading.Thread(target=app.run).start()
     main()
