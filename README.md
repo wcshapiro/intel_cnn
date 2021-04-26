@@ -13,5 +13,13 @@ if __name__ == '__main__':
     main()
 ```
 
+# Required Changes
+
+You will need to change the following sectino in the record funciton to get this to work on your device.
+```
+sd.default.device = ['MacBook Pro Microphone','MacBook Pro Speakers']
+```
+This section must be changed to the device you wish to use to record. Specifying an output is not needed unless you are trying to playback the audio. 
+
 # Note Commented out portions
 A large number of lines are commented out. Many of which were used only once during the data processing phase. If you are trying to extend functionality with extra sounds/ make any other changes. Be wary of deleting commented out sections. They are useful for different circumstances. 
