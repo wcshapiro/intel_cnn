@@ -1,0 +1,22 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<head>
+    <meta http-equiv="refresh" content=".5">
+
+</head>
+{% if sound %}
+  <!-- <h1> {{ sound }}!</h1> -->
+  <img src="/static/{{sound}}.png" alt="couldn't find {{sound}} icon" width=300px, height=300px>
+{% else %}
+  <h1>Listening...</h1>
+{% endif %}
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">
+    $(function(){
+setInterval(oneSecondFunction, 1000);
+});
+
+function oneSecondFunction() {
+console.log("updating")
+}
+</script> -->
