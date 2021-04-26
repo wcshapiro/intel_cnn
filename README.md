@@ -10,4 +10,7 @@ if __name__ == '__main__':
     threading.Thread(target=app.run).start() #comment this line out to run without webserver
     main()
 ```
+
+# Note Commented out portions
+A large number of lines are commented out. Many of which were used only once during the data processing phase. If you are trying to extend functionality with extra sounds/ make any other changes. Be wary of deleting commented out sections. They are useful for different circumstances. 
 to run the program itself, `python cnn_audio.py`
